@@ -1,0 +1,23 @@
+{
+  "name": "rest-api-checkpoint",
+  "version": "1.0.0",
+  "description": "Checkpoint: REST API - a small Express + Mongoose REST API exposing GET, POST, PUT and DELETE routes for a User resource.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "express",
+    "mongoose",
+    "mongodb",
+    "rest-api",
+    "gomycode-checkpoint"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.0"
+  }
+}

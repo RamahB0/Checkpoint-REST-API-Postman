@@ -1,0 +1,87 @@
+
+=== GET /users (empty database) ===
+[]
+
+=== POST /users -> create Alice ===
+{
+  "_id": "ObjectId(000000000000000000000001)",
+  "name": "Alice Johnson",
+  "email": "alice@example.com",
+  "age": 28
+}
+
+=== POST /users -> create Bob ===
+{
+  "_id": "ObjectId(000000000000000000000002)",
+  "name": "Bob Smith",
+  "email": "bob@example.com",
+  "age": 34
+}
+
+=== POST /users -> create Carol ===
+{
+  "_id": "ObjectId(000000000000000000000003)",
+  "name": "Carol Davis",
+  "email": "carol@example.com",
+  "age": 41
+}
+
+=== GET /users (after 3 creates) ===
+[
+  {
+    "_id": "ObjectId(000000000000000000000001)",
+    "name": "Alice Johnson",
+    "email": "alice@example.com",
+    "age": 28
+  },
+  {
+    "_id": "ObjectId(000000000000000000000002)",
+    "name": "Bob Smith",
+    "email": "bob@example.com",
+    "age": 34
+  },
+  {
+    "_id": "ObjectId(000000000000000000000003)",
+    "name": "Carol Davis",
+    "email": "carol@example.com",
+    "age": 41
+  }
+]
+
+=== PUT /users/ObjectId(000000000000000000000002) -> update Bob's age to 35 ===
+{
+  "_id": "ObjectId(000000000000000000000002)",
+  "name": "Bob Smith",
+  "email": "bob@example.com",
+  "age": 35
+}
+
+=== DELETE /users/ObjectId(000000000000000000000003) -> remove Carol ===
+{
+  "_id": "ObjectId(000000000000000000000003)",
+  "name": "Carol Davis",
+  "email": "carol@example.com",
+  "age": 41
+}
+
+=== GET /users (final state) ===
+[
+  {
+    "_id": "ObjectId(000000000000000000000001)",
+    "name": "Alice Johnson",
+    "email": "alice@example.com",
+    "age": 28
+  },
+  {
+    "_id": "ObjectId(000000000000000000000002)",
+    "name": "Bob Smith",
+    "email": "bob@example.com",
+    "age": 35
+  }
+]
+
+=== PUT /users/:id -> unknown id returns null (404 in real route) ===
+null
+
+=== DELETE /users/:id -> unknown id returns null (404 in real route) ===
+null
